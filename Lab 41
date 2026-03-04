@@ -1,0 +1,18 @@
+import numpy as np
+
+# number of trials
+trials = 10000
+
+# simulate coin flips (0 = tails, 1 = heads)
+flips = np.random.randint(0, 2, size=trials)
+
+# empirical probabilities
+heads_prob = np.mean(flips == 1)
+tails_prob = np.mean(flips == 0)
+
+print("Empirical Probability of Heads:", heads_prob)
+print("Empirical Probability of Tails:", tails_prob)
+
+# theoretical probabilities
+print("Theoretical Probability of Heads:", 0.5)
+print("Theoretical Probability of Tails:", 0.5)
