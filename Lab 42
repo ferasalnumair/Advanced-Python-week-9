@@ -1,0 +1,25 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Generate samples
+uniform_samples = np.random.uniform(0, 1, 10000)
+normal_samples = np.random.normal(0, 1, 10000)
+
+# Plot histograms + KDE
+plt.figure()
+sns.histplot(uniform_samples, kde=True)
+plt.title("Uniform Distribution")
+plt.show()
+
+plt.figure()
+sns.histplot(normal_samples, kde=True)
+plt.title("Normal Distribution")
+plt.show()
+
+# Compare mean and std
+print("Uniform Mean:", np.mean(uniform_samples))
+print("Uniform Std:", np.std(uniform_samples))
+
+print("Normal Mean:", np.mean(normal_samples))
+print("Normal Std:", np.std(normal_samples))
