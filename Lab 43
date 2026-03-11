@@ -1,0 +1,25 @@
+import numpy as np
+from scipy import stats
+
+mu = 0
+sigma = 1
+dist = stats.norm(mu, sigma)
+
+a = -1
+b = 1
+
+prob = dist.cdf(b) - dist.cdf(a)
+print("P(a <= X <= b) =", prob)
+
+q1 = dist.ppf(0.25)
+q2 = dist.ppf(0.50)
+q3 = dist.ppf(0.75)
+
+print("25th percentile:", q1)
+print("Median:", q2)
+print("75th percentile:", q3)
+
+samples = dist.rvs(size=1000000)
+
+mc_prob = np.mean((samples >= a) & (samples <= b))
+print("Monte Carlo estimate:", mc_prob)
